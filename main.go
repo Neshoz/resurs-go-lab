@@ -21,10 +21,10 @@ func getHello(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	router := http.NewServeMux()
-	router.HandleFunc("/", getRoot)
-	router.HandleFunc("/hello", getHello)
+	router.HandleFunc("GET /", getRoot)
+	router.HandleFunc("GET /hello", getHello)
 
-	err := http.ListenAndServe(":5000", router)
+	err := http.ListenAndServe(":8080", router)
 
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Printf("Server closed")
@@ -35,5 +35,5 @@ func main() {
 }
 
 func testMiddleware(handler func(http.ResponseWriter, *http.Request)) {
-	
+
 }

@@ -1,0 +1,4 @@
+GET http://localhost:5000/api/{{contextId}}/me
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Apikey: {{apiKey}}
